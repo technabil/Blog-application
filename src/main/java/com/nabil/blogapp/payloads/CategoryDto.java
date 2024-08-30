@@ -1,21 +1,18 @@
 package com.nabil.blogapp.payloads;
 
-import jakarta.validation.constraints.Email;
+
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@NoArgsConstructor
-@Getter
 @Setter
-public class UserDto {
+@Getter
+@NoArgsConstructor
+public class CategoryDto {
     private int id;
     @NotNull
-    private String username;
+    private String categoryName;
     @NotNull
-    @Email
-    private String email;
-    @NotNull
-    private String password;
+    private String categoryDesc;
 }

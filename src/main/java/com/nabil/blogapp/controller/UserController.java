@@ -4,6 +4,7 @@ package com.nabil.blogapp.controller;
 import com.nabil.blogapp.model.User;
 import com.nabil.blogapp.payloads.UserDto;
 import com.nabil.blogapp.services.UserServices;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +20,7 @@ public class UserController {
     private UserServices userService;
 
     @PostMapping("/create")
-    public ResponseEntity<UserDto> create(@RequestBody  UserDto userDto) {
+    public ResponseEntity<UserDto> create(@Valid @RequestBody  UserDto userDto) {
         UserDto user = this.userService.createUser(userDto);
         return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
